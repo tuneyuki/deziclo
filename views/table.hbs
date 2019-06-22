@@ -1,0 +1,25 @@
+<h3>{{tableName}}</h3>
+<div id="{{tableName}}"></div>
+
+<table class="table table-bordered table-striped">
+<thead>
+  <tr>
+    {{#each array.[0]}}
+      <th scope="col">{{@key}}</th>
+    {{/each}}
+  </tr>
+</thead>
+<tbody>
+  {{#each array}}
+    <tr>
+    	{{#each this}}
+        {{#unless @index}}
+          <td><a href="./{{../../tableName}}/{{this}}">{{this}}</a></td>
+        {{else}}
+          <td>{{this}}</td>
+        {{/unless}}
+      {{/each}}
+    </tr>
+  {{/each}}
+</tbody>
+</table>
